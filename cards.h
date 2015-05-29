@@ -1,0 +1,1 @@
+void cards_Init(uint32_t);
