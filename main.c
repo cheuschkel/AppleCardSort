@@ -17,10 +17,10 @@
 
 int main(int argc,  char* argv[])
 {
-    int32_t number_cards = 0;
-    uint32_t number_rounds = 1;
+    volatile int32_t number_cards = 0;
+    volatile uint32_t number_rounds = 1;
 
-    /* There should only be one arguemnt: number of cards. */
+    /* There should only be one argument: number of cards. */
     if(argc != 2)
     {
         printf("usage: <N cards> (where N is 1 - 2147483647)\r\n");
@@ -43,11 +43,17 @@ int main(int argc,  char* argv[])
 
     /* Create deck. */
     cards_Init((uint32_t)number_cards);
-    
+
+#if defined CARDS_DEBUG
+	printf("Round 1: ", number_rounds);
+#endif    
     /* Run sorting algorithm and measure number of rounds taken. */
     while(!cards_OneRound())
     {
         number_rounds++;
+#if defined CARDS_DEBUG
+		printf("Round %u: ", number_rounds);
+#endif
     }
 
     printf("Number of rounds: %lu\r\n", number_rounds);
