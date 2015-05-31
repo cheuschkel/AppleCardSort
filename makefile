@@ -9,5 +9,13 @@ OBJ = cards.o main.o
 cards: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
 	
+debug:
+	make CFLAGS=-DCARDS_DEBUG
+	
 clean:
-	rm -rf *.o
+	rm -f *.o
+	rm cards.exe
+	
+rebuild:
+	make clean
+	make
