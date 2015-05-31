@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <stdbool.h>
+#include "stdbool.h"
 
 /**
  * Action taken for the current card in hand.

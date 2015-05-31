@@ -15,3 +15,16 @@ A "round" of sorting the deck works as follows:
  
 After each round, the deck is checked to see if it is in original order.
 
+Building
+--------
+
+To build, run `make` in a Unix shell with **make** support at the root 
+directory.
+
+Running
+-------
+
+To run, enter a number to determine the number of rounds the sort algorithm will 
+run to get the original deck order.
+
+	./cards.exe <N cards>

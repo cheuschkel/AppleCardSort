@@ -5,8 +5,6 @@
  * @brief  Provides stdbool.h for WIN32 applications.
  */
 
-#ifdef WIN32
 typedef int bool;
 #define false 0
 #define true 1
-#endif

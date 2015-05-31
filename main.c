@@ -12,7 +12,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include <stdbool.h>
+#include "stdbool.h"
 #include "cards.h"
 
 int main(int argc,  char* argv[])
@@ -23,7 +23,7 @@ int main(int argc,  char* argv[])
     /* There should only be one arguemnt: number of cards. */
     if(argc != 2)
     {
-        printf("usage: <N cards> (where N is 1 - 4294967295)\r\n");
+        printf("usage: <N cards> (where N is 1 - 2147483647)\r\n");
         return 0;
     }
 
