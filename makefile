@@ -14,7 +14,7 @@ debug:
 	
 clean:
 	rm -f *.o
-	rm cards.exe
+	rm cards
 	
 rebuild:
 	make clean

@@ -28,7 +28,7 @@ int main(int argc,  char* argv[])
     }
 
     /* Input must be a signed 32-bit integer. */
-    if(sscanf(argv[1], "%ld", &number_cards) != 1) 
+    if(sscanf(argv[1], "%d", &number_cards) != 1) 
     { 
         printf("error - not an integer"); 
         return 0;
@@ -56,7 +56,10 @@ int main(int argc,  char* argv[])
 #endif
     }
 
-    printf("Number of rounds: %lu\r\n", number_rounds);
+    printf("Number of rounds: %u\r\n", number_rounds);
+
+    /* Free allocated memory. */
+    cards_Free();
 
     return 0;
 }

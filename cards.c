@@ -170,6 +170,24 @@ bool cards_OneRound(void)
 }
 
 /**
+ * Frees memory allocated by creating deck.
+ */
+
+void cards_Free(void)
+{
+    Card * card = FirstCard;
+    
+    while(card->next_card != LastCard)
+    {
+        Card * next_card = card->next_card;
+        free(card);
+        card = next_card;
+    }
+    /* Free last card (since it points to itself). */
+    free(LastCard);
+}
+
+/**
  * Adds a card to the deck.  
  * @param card_number The card number of the appended card.
  * @param last_card Current card at the bottom of the deck.

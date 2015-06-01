@@ -7,3 +7,4 @@
 
 void cards_Init(uint32_t);
 bool cards_OneRound(void);
+void cards_Free(void);
